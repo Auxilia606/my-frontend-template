@@ -1,11 +1,76 @@
-# React + TypeScript + Vite
+# MY FRONTEND TEMPLATE
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+확장성이 높고 개발자 간 컨벤션을 맞추기 용이한 템플릿을 제작 중입니다.
 
-Currently, two official plugins are available:
+기능 분할 설계에 대하여:<br>
+https://emewjin.github.io/feature-sliced-design/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+원문:<br>
+https://dev.to/m_midas/feature-sliced-design-the-best-frontend-architecture-4noj
+
+의존성 설치<br>
+
+> yarn
+
+프로젝트 실행<br>
+
+> yarn dev
+
+빌드
+
+> yarn build
+
+## yarn 설치
+
+> npm install --global yarn
+
+버전 확인
+
+> yarn --version
+
+## APP base
+
+VITE + react-ts
+
+## ESLINT simple sort
+
+VSCode의 extension에서 ESLint, Prettier - Code formatter 추가 권장합니다.
+
+![image](/uploads/edc214567d315bd84613ae885a5c81c9/image.png)
+
+## tailwindcss
+
+tailwindcss 공식 가이드 문서<br>
+https://tailwindcss.com/docs/aspect-ratio
+
+적용하려는 style을 페이지 내에서 `ctrl + f` 검색 후 적용
+
+tailwindcss를 적용하는 이유(원문):<br>
+https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
+
+**VS code extension 적용 권장 - Tailwind CSS InteilliSense**
+
+![image](/uploads/cde3f2160d53b980eabb3b5e5f1277a7/image.png)
+
+예시:
+
+```tsx
+const BaseButton: React.FC<ButtonProps> = (props) => {
+  const { text, small, ...buttonProps } = props;
+
+  return (
+    <button
+      {...buttonProps}
+      className={classNames(buttonProps.className, "font-bold", {
+        "w-[220px] h-[40px] text-[15px]": !small,
+        "w-[104px] h-[32px] text-[13.5px]": small,
+      })}
+    >
+      {text}
+    </button>
+  );
+};
+```
 
 ## Expanding the ESLint configuration
 
@@ -17,12 +82,12 @@ If you are developing a production application, we recommend updating the config
 export default {
   // other rules...
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: ["./tsconfig.json", "./tsconfig.node.json"],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
