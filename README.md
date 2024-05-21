@@ -36,8 +36,6 @@ VITE + react-ts
 
 VSCode의 extension에서 ESLint, Prettier - Code formatter 추가 권장합니다.
 
-![image](/uploads/edc214567d315bd84613ae885a5c81c9/image.png)
-
 ## tailwindcss
 
 tailwindcss 공식 가이드 문서<br>
@@ -49,8 +47,6 @@ tailwindcss를 적용하는 이유(원문):<br>
 https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
 
 **VS code extension 적용 권장 - Tailwind CSS InteilliSense**
-
-![image](/uploads/cde3f2160d53b980eabb3b5e5f1277a7/image.png)
 
 예시:
 
