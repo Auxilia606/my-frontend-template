@@ -33,5 +33,6 @@ module.exports = {
         ],
       },
     ],
+    "simple-import-sort/exports": "error",
   },
 };
